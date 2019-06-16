@@ -1,34 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
-    tools:context=".fragment.Unit1ReportFragment">
-
-    <TextView
-        android:id="@+id/txtShowNameLogin"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name Login"
-        android:textSize="@dimen/h1" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Unit 1"
-        android:textSize="@dimen/h1" />
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
-        android:background="#4D4B4B"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
-            android:textColor="#FFFFFF"
+            android:id="@+id/txtTimeTest"
             android:gravity="center_horizontal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -36,7 +18,7 @@
             android:text="Time Test" />
 
         <TextView
-            android:textColor="#FFFFFF"
+            android:id="@+id/txtWarmUp"
             android:gravity="center_horizontal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -44,7 +26,7 @@
             android:text="Warm-up" />
 
         <TextView
-            android:textColor="#FFFFFF"
+            android:id="@+id/txtPractice"
             android:gravity="center_horizontal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -52,7 +34,7 @@
             android:text="Practice" />
 
         <TextView
-            android:textColor="#FFFFFF"
+            android:id="@+id/txtListening"
             android:gravity="center_horizontal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -60,7 +42,7 @@
             android:text="Listening" />
 
         <TextView
-            android:textColor="#FFFFFF"
+            android:id="@+id/txtLanguage"
             android:gravity="center_horizontal"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -70,10 +52,12 @@
 
     </LinearLayout>
 
-    <!--show list score-->
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycleScoreUnit1"
+    <View
+        android:layout_marginBottom="3dp"
+        android:layout_marginTop="3dp"
+        android:background="#868282"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="1dp"/>
+
 
 </LinearLayout>
