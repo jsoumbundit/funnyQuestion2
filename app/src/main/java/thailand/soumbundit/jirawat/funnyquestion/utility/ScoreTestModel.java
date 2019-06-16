@@ -16,7 +16,12 @@ public class ScoreTestModel implements Parcelable {
         NameUnit = nameUnit;
         Practice = practice;
         WarmUp = warmUp;
-    }
+    } // Constructor for units
+
+    public ScoreTestModel( String nameUnit, String practice) {
+        NameUnit = nameUnit;
+        Practice = practice;
+     } // Constructor for Pre-test and Post-test units
 
     protected ScoreTestModel(Parcel in) {
         Language = in.readString();

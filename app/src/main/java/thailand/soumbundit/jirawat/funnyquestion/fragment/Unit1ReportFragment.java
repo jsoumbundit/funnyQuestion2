@@ -42,12 +42,12 @@ public class Unit1ReportFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+//        Show Name User
+        showName();
+
 //        Create RecycleView
         createRecycleView();
 
-//        showName
-
-        showName();
 
     }
 
