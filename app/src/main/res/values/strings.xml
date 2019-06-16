@@ -12,7 +12,6 @@
     <string name="command2"><b>Direction:</b> Study the test again and then summarize into infographic.</string>
 
 
-
     <!--unit1-->
     <string name="u1styleText1">Unit 1</string>
     <string name="u1styleText2">Computer Users</string>
@@ -154,7 +153,6 @@
     <string name="u1styleText139"><b>Answer:</b> I usually use a computer at computer center.</string>
     <string name="u1styleText140">\tdo/ What/ you/ ?/ do</string>
     <string name="u1styleText141"><b>Answer:</b> I’m a university student.</string>
-
 
 
     <!--unit2-->
@@ -921,7 +919,6 @@
     <string name="u4styleText201">\tturning off/ avoid/ power/ while/ main/ is/ computer/ running</string>
 
 
-
     <!--post unit4-->
     <string name="postUnit4styleText1">Post-test</string>
     <string name="postUnit4styleText5">3. The internet (often called simply \'the net\') is a global …………………………….of interconnected computers.</string>
@@ -1495,6 +1492,8 @@
     <string name="preUnit1to5styleText262">c. Visual voice mail</string>
     <string name="preUnit1to5styleText263">d. Video messaging</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
