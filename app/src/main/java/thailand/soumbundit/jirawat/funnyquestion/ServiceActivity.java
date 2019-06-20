@@ -33,6 +33,7 @@ import thailand.soumbundit.jirawat.funnyquestion.fragment.ReportFragment;
 import thailand.soumbundit.jirawat.funnyquestion.fragment.Unit1Fragment;
 import thailand.soumbundit.jirawat.funnyquestion.fragment.Unit1ReportFragment;
 import thailand.soumbundit.jirawat.funnyquestion.fragment.Unit2Fragment;
+import thailand.soumbundit.jirawat.funnyquestion.fragment.Unit2ReportFragment;
 import thailand.soumbundit.jirawat.funnyquestion.fragment.Unit3Fragment;
 import thailand.soumbundit.jirawat.funnyquestion.fragment.Unit4Fragment;
 import thailand.soumbundit.jirawat.funnyquestion.fragment.Unit5Fragment;
@@ -527,7 +528,7 @@ public class ServiceActivity extends AppCompatActivity implements View.OnClickLi
             case  R.id.txtReport:
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.contentServiceFragment, new Unit1ReportFragment())
+                        .replace(R.id.contentServiceFragment, new Unit2ReportFragment())
                         .commit();
                 setCheckImage("Report");
                 break;

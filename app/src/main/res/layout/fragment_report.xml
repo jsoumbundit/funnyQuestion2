@@ -6,25 +6,30 @@
     android:layout_height="match_parent">
 
     <!--Contents-->
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true">
+        android:orientation="vertical"
+        android:padding="@dimen/padding">
+        <!--title-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Score Report"
+            android:textSize="@dimen/h1"
+            android:textStyle="bold" />
 
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/child_fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="@dimen/padding">
-            <!--title-->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="Score Report"
-                android:textSize="@dimen/h1"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </ScrollView>
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+
 </RelativeLayout>
