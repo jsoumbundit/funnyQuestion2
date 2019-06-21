@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -48,32 +49,40 @@ public class Unit2ReportFragment extends Fragment {
 
     private int positionSelect = 0;
 
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         itemSpinner();
 
-//        Button Select Unit requested
-        buttonSelectUnit();
-
 //        Show Name User
         showName();
 
+        tableSlideUpDown();
+
     }
 
-    private void buttonSelectUnit() {
-        Button button = getView().findViewById(R.id.selectButton);
-        button.setOnClickListener(new View.OnClickListener() {
+    private void tableSlideUpDown() {
+        final LinearLayout linearLayout = getView().findViewById(R.id.tableLayout);
+        final TextView textView = getView().findViewById(R.id.txtOpenTable);
+        textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                //        Create RecycleView
-                createRecycleView();
+                if (linearLayout.isShown()) {
+                    linearLayout.setVisibility(View.GONE);
+                    textView.setText("Show more..");
+                }
+                else{
+                    linearLayout.setVisibility(View.VISIBLE);
+                    textView.setText("Hide Table");
+                }
             }
         });
-
     }
+
+
+
 
     private void showName() {
         TextView textView = getView().findViewById(R.id.txtShowNameLogin);
@@ -93,6 +102,9 @@ public class Unit2ReportFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 positionSelect = position;
+                //        Create RecycleView
+                createRecycleView();
+
             }
 
             @Override
@@ -109,6 +121,7 @@ public class Unit2ReportFragment extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         final String[] stringsUnit = myConstantReport.getReportChoiceSpinner();
+        String[] strings;
 
 //        Process Read FireBase
         final ArrayList<String> languageStringArrayList = new ArrayList<>();
@@ -126,7 +139,14 @@ public class Unit2ReportFragment extends Fragment {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference databaseReference = firebaseDatabase.getReference().child("ScoreTest").child(uidLogin);
 
+        final TextView textView1 = getView().findViewById(R.id.txtWarmUpMax);
+        final TextView textView2 = getView().findViewById(R.id.txtPracticeMax);
+        final TextView textView3 = getView().findViewById(R.id.txtListeningMax);
+        final TextView textView4 = getView().findViewById(R.id.txtLanguageMax);
+
         final int[] ints = new int[]{0};
+
+
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -157,22 +177,31 @@ public class Unit2ReportFragment extends Fragment {
 
                 }//for loop
 
+
+//                Find Max scores each groups
+
+
+
+                if(showDateStringArrayList.isEmpty()){
+                    textView1.setText("0.0%");
+                    textView2.setText("0.0%");
+                    textView3.setText("0.0%");
+                    textView4.setText("0.0%");
+                }
+                else {
+                    textView1.setText(Collections.max(warmUpStringArrayList) + "%");
+                    textView2.setText(Collections.max(practiceStringArrayList) + "%");
+                    textView3.setText(Collections.max(listeningStringArrayList) + "%");
+                    textView4.setText(Collections.max(languageStringArrayList) + "%");
+                }
+
+
                 ShowScoreAdapter showScoreAdapter = new ShowScoreAdapter(getActivity(),
                         languageStringArrayList, listeningStringArrayList,
                         showDateStringArrayList, practiceStringArrayList, warmUpStringArrayList);
 
                 recyclerView.setAdapter(showScoreAdapter);
 
-                // Log.d("16JunV1", "max Warmup ==>" + Collections.max(warmUpStringArrayList));
-                TextView textView1 = getView().findViewById(R.id.txtWarmUpMax);
-                TextView textView2 = getView().findViewById(R.id.txtPracticeMax);
-                TextView textView3 = getView().findViewById(R.id.txtListeningMax);
-                TextView textView4 = getView().findViewById(R.id.txtLanguageMax);
-
-                textView1.setText(Collections.max(warmUpStringArrayList)+"%");
-                textView2.setText(Collections.max(practiceStringArrayList)+"%");
-                textView3.setText(Collections.max(listeningStringArrayList)+"%");
-                textView4.setText(Collections.max(languageStringArrayList)+"%");
 
 
             }
