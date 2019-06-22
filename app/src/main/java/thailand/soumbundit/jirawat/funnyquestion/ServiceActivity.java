@@ -528,11 +528,10 @@ public class ServiceActivity extends AppCompatActivity implements View.OnClickLi
             case  R.id.txtReport:
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.contentServiceFragment, new Unit2ReportFragment())
+                        .replace(R.id.contentServiceFragment, new ReportFragment())
                         .commit();
                 setCheckImage("Report");
                 break;
-
         }
 
 

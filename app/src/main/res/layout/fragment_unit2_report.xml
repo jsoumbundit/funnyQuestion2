@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="20dp"
+    android:padding="@dimen/padding8"
     tools:context=".fragment.Unit1ReportFragment">
 
     <TextView
@@ -28,7 +28,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Overview Report"
+        android:text="Overview maximum score report"
         android:textSize="@dimen/h2"
         android:textStyle="bold" />
 
@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/padding8">
+        android:padding="@dimen/padding">
         <!--Roll1-->
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,7 +47,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/bg_clear2"
+                android:background="@drawable/bg_clear4"
                 android:orientation="vertical"
                 android:padding="@dimen/padding4">
 
@@ -55,14 +55,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="WarmUp"
-                    android:textSize="@dimen/h3" />
+                    android:text="WarmUp score"
+                    android:textSize="@dimen/h2" />
 
                 <TextView
                     android:id="@+id/txtWarmUpMax"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/padding8"
                     android:gravity="center"
                     android:text="0.0%"
                     android:textSize="@dimen/h1" />
@@ -75,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/padding8"
                 android:layout_weight="1"
-                android:background="@drawable/bg_clear2"
+                android:background="@drawable/bg_clear4"
                 android:orientation="vertical"
                 android:padding="@dimen/padding4">
 
@@ -83,14 +82,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Practice"
-                    android:textSize="@dimen/h3" />
+                    android:text="Practice score"
+                    android:textSize="@dimen/h2" />
 
                 <TextView
                     android:id="@+id/txtPracticeMax"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/padding8"
                     android:gravity="center"
                     android:text="0.0%"
                     android:textSize="@dimen/h1" />
@@ -109,7 +107,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/bg_clear2"
+                android:background="@drawable/bg_clear4"
                 android:orientation="vertical"
                 android:padding="@dimen/padding4">
 
@@ -117,14 +115,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Listening"
-                    android:textSize="@dimen/h3" />
+                    android:text="Listening score"
+                    android:textSize="@dimen/h2" />
 
                 <TextView
                     android:id="@+id/txtListeningMax"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/padding8"
                     android:gravity="center"
                     android:text="0.0%"
                     android:textSize="@dimen/h1" />
@@ -136,7 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/padding8"
                 android:layout_weight="1"
-                android:background="@drawable/bg_clear2"
+                android:background="@drawable/bg_clear4"
                 android:orientation="vertical"
                 android:padding="@dimen/padding4">
 
@@ -144,14 +141,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Language"
-                    android:textSize="@dimen/h3" />
+                    android:text="Language score"
+                    android:textSize="@dimen/h2" />
 
                 <TextView
                     android:id="@+id/txtLanguageMax"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/padding8"
                     android:gravity="center"
                     android:text="0.0%"
                     android:textSize="@dimen/h1" />
@@ -172,12 +168,11 @@
         android:id="@+id/txtOpenTable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/padding8"
         android:gravity="right"
-        android:text="Show more.."
+        android:text="Show all score records"
         android:textStyle="bold"
         android:textColor="#E91E63"
-        android:textSize="@dimen/h3" />
+        android:textSize="@dimen/h2" />
 
     <LinearLayout
         android:id="@+id/tableLayout"

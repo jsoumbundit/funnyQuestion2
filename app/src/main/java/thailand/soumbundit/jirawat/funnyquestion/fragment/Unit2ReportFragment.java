@@ -26,6 +26,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.lang.annotation.Retention;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -71,11 +72,13 @@ public class Unit2ReportFragment extends Fragment {
             public void onClick(View view) {
                 if (linearLayout.isShown()) {
                     linearLayout.setVisibility(View.GONE);
-                    textView.setText("Show more..");
+                    textView.setText("Show all score records");
+                    textView.setTextColor(0xFFE91E63);
                 }
                 else{
                     linearLayout.setVisibility(View.VISIBLE);
-                    textView.setText("Hide Table");
+                    textView.setText("Hide all score records");
+                    textView.setTextColor(0xFF3F51B5);
                 }
             }
         });
@@ -177,11 +180,7 @@ public class Unit2ReportFragment extends Fragment {
 
                 }//for loop
 
-
 //                Find Max scores each groups
-
-
-
                 if(showDateStringArrayList.isEmpty()){
                     textView1.setText("0.0%");
                     textView2.setText("0.0%");
@@ -189,12 +188,11 @@ public class Unit2ReportFragment extends Fragment {
                     textView4.setText("0.0%");
                 }
                 else {
-                    textView1.setText(Collections.max(warmUpStringArrayList) + "%");
-                    textView2.setText(Collections.max(practiceStringArrayList) + "%");
-                    textView3.setText(Collections.max(listeningStringArrayList) + "%");
-                    textView4.setText(Collections.max(languageStringArrayList) + "%");
+                    textView1.setText(findMaxScore(warmUpStringArrayList) + "%");
+                    textView2.setText(findMaxScore(practiceStringArrayList) + "%");
+                    textView3.setText(findMaxScore(listeningStringArrayList) + "%");
+                    textView4.setText(findMaxScore(languageStringArrayList) + "%");
                 }
-
 
                 ShowScoreAdapter showScoreAdapter = new ShowScoreAdapter(getActivity(),
                         languageStringArrayList, listeningStringArrayList,
@@ -202,8 +200,16 @@ public class Unit2ReportFragment extends Fragment {
 
                 recyclerView.setAdapter(showScoreAdapter);
 
+            }
 
-
+            private String findMaxScore(ArrayList<String> stringArrayList) {
+                ArrayList<Float> floatArrayList = new ArrayList<>();
+                float v = 0.0f;
+                for (String s : stringArrayList) {
+                    floatArrayList.add(Float.parseFloat(s));
+                }
+                v = Collections.max(floatArrayList, null);
+                return Float.toString(v) ;
             }
 
             @Override
