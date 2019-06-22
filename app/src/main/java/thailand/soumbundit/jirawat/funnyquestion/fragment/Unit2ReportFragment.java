@@ -124,7 +124,6 @@ public class Unit2ReportFragment extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         final String[] stringsUnit = myConstantReport.getReportChoiceSpinner();
-        String[] strings;
 
 //        Process Read FireBase
         final ArrayList<String> languageStringArrayList = new ArrayList<>();

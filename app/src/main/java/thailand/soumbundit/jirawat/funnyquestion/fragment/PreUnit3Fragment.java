@@ -10,11 +10,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.Spinner;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -22,10 +22,11 @@ import java.util.Calendar;
 
 import thailand.soumbundit.jirawat.funnyquestion.R;
 import thailand.soumbundit.jirawat.funnyquestion.utility.MyConstant;
+import thailand.soumbundit.jirawat.funnyquestion.utility.ScoreTestModel;
 
 public class PreUnit3Fragment extends Fragment {
     private MyConstant myConstant = new MyConstant();
-    private String uidString, nameUnitString, timeTestString, pretestScoreString;
+    private String uidString, nameUnitString, timeTestString, practiceString;
     private String tag = "11NovV1";
     private String tag2 = "11NovV2";
 
@@ -86,7 +87,7 @@ public class PreUnit3Fragment extends Fragment {
         builder.setIcon(R.drawable.ic_action_alert);
         builder.setTitle("Pre-test Unit3 Score");
 
-        strings[0] = "You got: " + pretestScoreString + "% of Score";
+        strings[0] = "You got: " + practiceString + "% of Score";
         builder.setItems(strings, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -94,15 +95,42 @@ public class PreUnit3Fragment extends Fragment {
             }
         });
 
-        //builder.setMessage("You got: " + pretestScoreString +"/10");
+        //builder.setMessage("You got: " + practiceString +"/10");
 
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                sentValueToFirebase();
                 dialog.dismiss();
             }
         });
         builder.show();
+    }
+
+    private void sentValueToFirebase() {
+
+        String [] strings = timeTestString.split(" ");
+        String dateString = "PreUnit1_" + strings[0] + "_" + strings[1].trim();
+        Log.d("16JunV1", "dateString ==>" + dateString);
+
+//      Create Childs on Firebase
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference()
+                .child("ScoreTest")
+                .child(uidString)
+                .child(dateString);
+
+        //Create model
+        ScoreTestModel scoreTestModel = new ScoreTestModel(nameUnitString, practiceString);
+
+//        Insert data
+        databaseReference.setValue(scoreTestModel).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d("16JunV1", "Success Upload");
+            }
+        });
+
     }
 
     public void processCheckScore() {
@@ -112,7 +140,7 @@ public class PreUnit3Fragment extends Fragment {
 
         scoreInt += calculatePreTest();
         scoreInt = scoreInt * 10;
-        pretestScoreString = Integer.toString(scoreInt);
+        practiceString = Integer.toString(scoreInt);
     }
 
     private int calculatePreTest() {
@@ -145,7 +173,7 @@ public class PreUnit3Fragment extends Fragment {
 
     public void findTimeTest() {
         Calendar calendar = Calendar.getInstance();
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yy HH:mm");
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yy HH:mm");
         timeTestString = dateFormat.format(calendar.getTime());
         Log.d(tag, "TimeTestString ==> " + timeTestString);
     }

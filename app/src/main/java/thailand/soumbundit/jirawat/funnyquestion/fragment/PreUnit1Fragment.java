@@ -31,7 +31,7 @@ import thailand.soumbundit.jirawat.funnyquestion.utility.ScoreTestModel;
 public class PreUnit1Fragment extends Fragment {
     private MyConstant myConstant = new MyConstant();
     private ConstantPreUnit1 constantPreUnit1 = new ConstantPreUnit1();
-    private String uidString, nameUnitString, timeTestString,  practiseString;
+    private String uidString, nameUnitString, timeTestString,  practiceString;
     private String tag = "11NovV1";
     private String tag2 = "11NovV2";
     private int[] spinnerAnswerInts = new int[]{0,0,0,0,0,0,0,0};
@@ -260,7 +260,7 @@ public class PreUnit1Fragment extends Fragment {
         builder.setIcon(R.drawable.ic_action_alert);
         builder.setTitle("Pre-test Unit1 Score");
 
-        strings[0] = "You got: " + practiseString +"% of Score";
+        strings[0] = "You got: " + practiceString +"% of Score";
         builder.setItems(strings, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -294,7 +294,7 @@ public class PreUnit1Fragment extends Fragment {
                 .child(dateString);
 
         //Create model
-        ScoreTestModel scoreTestModel = new ScoreTestModel(nameUnitString,practiseString);
+        ScoreTestModel scoreTestModel = new ScoreTestModel(nameUnitString, practiceString);
 
 //        Insert data
         databaseReference.setValue(scoreTestModel).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -316,7 +316,7 @@ public class PreUnit1Fragment extends Fragment {
         scoreInt += checkScoreSpinner();
         scoreInt = scoreInt*10;
 
-        practiseString = Integer.toString(scoreInt);
+        practiceString = Integer.toString(scoreInt);
     }
 
     private int checkScoreChioce() {
