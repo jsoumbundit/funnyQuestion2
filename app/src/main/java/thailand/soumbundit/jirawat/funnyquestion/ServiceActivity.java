@@ -29,9 +29,8 @@ import thailand.soumbundit.jirawat.funnyquestion.fragment.PreUnit2Fragment;
 import thailand.soumbundit.jirawat.funnyquestion.fragment.PreUnit3Fragment;
 import thailand.soumbundit.jirawat.funnyquestion.fragment.PreUnit4Fragment;
 import thailand.soumbundit.jirawat.funnyquestion.fragment.PreUnit5Fragment;
-import thailand.soumbundit.jirawat.funnyquestion.fragment.ReportFragment;
+import thailand.soumbundit.jirawat.funnyquestion.fragment.PreUnitReportFragment;
 import thailand.soumbundit.jirawat.funnyquestion.fragment.Unit1Fragment;
-import thailand.soumbundit.jirawat.funnyquestion.fragment.Unit1ReportFragment;
 import thailand.soumbundit.jirawat.funnyquestion.fragment.Unit2Fragment;
 import thailand.soumbundit.jirawat.funnyquestion.fragment.Unit2ReportFragment;
 import thailand.soumbundit.jirawat.funnyquestion.fragment.Unit3Fragment;
@@ -47,12 +46,12 @@ public class ServiceActivity extends AppCompatActivity implements View.OnClickLi
     private TextView unit1TextView, unit2TextView, unit3TextView, unit4TextView, unit5TextView, unit6TextView,
             preUnit1TextView, preUnit2TextView, preUnit3TextView, preUnit4TextView, preUnit5TextView, preUnit1to5TextView,
             postUnit1TextView, postUnit2TextView, postUnit3TextView, postUnit4TextView, postUnit5TextView, postUnit1to5TextView,
-            reportView;
+            unitReportTextView, preUnitReportTextView;
 
     private ImageView unit1ImgView, unit2ImgView, unit3ImgView, unit4ImgView, unit5ImgView, unit6ImgView,
             preUnit1ImgView, preUnit2ImgView, preUnit3ImgView, preUnit4ImgView, preUnit5ImgView, preUnit1to5ImgView,
             postUnit1ImgView, postUnit2ImgView, postUnit3ImgView, postUnit4ImgView, postUnit5ImgView, postUnit1to5ImgView,
-            reportImgView;
+            unitReportImgView, preUnitReportImgView;
 
     private LinearLayout linearLayout1, linearLayout2, linearLayout3;
 
@@ -201,15 +200,23 @@ public class ServiceActivity extends AppCompatActivity implements View.OnClickLi
         setUnitController(strings);
         setPostUnitController(strings);
 
-        setReportController(strings[18]);
+        setReportController(strings);
 
     }
 
-    private void setReportController(String string) {
-        reportView = findViewById(R.id.txtReport);
-        reportImgView = findViewById(R.id.imgReport);
-        reportView.setText(string);
-        reportView.setOnClickListener(ServiceActivity.this);
+    private void setReportController(String[] string) {
+        unitReportTextView = findViewById(R.id.txtUnitReport);
+        preUnitReportTextView = findViewById(R.id.txtPreUnitReport);
+
+
+        unitReportImgView = findViewById(R.id.imgUnitReport);
+        preUnitReportImgView = findViewById(R.id.imgPreUnitReport);
+
+        unitReportTextView.setText(string[18]);
+        preUnitReportTextView.setText(string[19]);
+
+        unitReportTextView.setOnClickListener(ServiceActivity.this);
+        preUnitReportTextView.setOnClickListener(ServiceActivity.this);
     }
 
     private void setPreUnitController(String[] strings) {
@@ -525,12 +532,20 @@ public class ServiceActivity extends AppCompatActivity implements View.OnClickLi
                 setCheckImage("PostUnit1to5");
                 break;
 
-            case  R.id.txtReport:
+            case  R.id.txtUnitReport:
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.contentServiceFragment, new ReportFragment())
+                        .replace(R.id.contentServiceFragment, new Unit2ReportFragment())
                         .commit();
-                setCheckImage("Report");
+                setCheckImage("UnitReport");
+                break;
+
+            case  R.id.txtPreUnitReport:
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contentServiceFragment, new PreUnitReportFragment())
+                        .commit();
+                setCheckImage("PreUnitReport");
                 break;
         }
 
@@ -609,9 +624,13 @@ public class ServiceActivity extends AppCompatActivity implements View.OnClickLi
             postUnit1to5ImgView.setImageResource(R.drawable.ic_action_check_ok);
         else postUnit1to5ImgView.setImageResource(R.drawable.ic_action_rectangle);
 
-        if (position.equals("Report"))
-            reportImgView.setImageResource(R.drawable.ic_action_check_ok);
-        else reportImgView.setImageResource(R.drawable.ic_action_rectangle);
+        if (position.equals("UnitReport"))
+            unitReportImgView.setImageResource(R.drawable.ic_action_check_ok);
+        else unitReportImgView.setImageResource(R.drawable.ic_action_rectangle);
+
+        if (position.equals("PreUnitReport"))
+            preUnitReportImgView.setImageResource(R.drawable.ic_action_check_ok);
+        else preUnitReportImgView.setImageResource(R.drawable.ic_action_rectangle);
 
     }
 

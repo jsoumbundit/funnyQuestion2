@@ -251,8 +251,8 @@ public class MyConstant {
             "Post-test Unit5",
             "Post-test Unit1-5",
 
-            "Score Report"//18
-
+            "Unit1-5 Report",//18
+            "Pre and Post Unit1-5 Report"
     };
 
     private String[] chioceSpinner5Strings = new String[]{

@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <!--Col1 - WarmUp Max. Score-->
+            <!--Col1 -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -49,15 +49,15 @@
                 android:orientation="vertical"
                 android:padding="@dimen/padding4">
 
-                <!--text-->
+                <!--Block1-->
                 <TextView
+                    android:id="@+id/txtBlock11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="WarmUp score"
                     android:textSize="@dimen/h2" />
 
                 <TextView
-                    android:id="@+id/txtWarmUpMax"
+                    android:id="@+id/txtBlock12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -66,7 +66,7 @@
 
 
             </LinearLayout>
-            <!--Col2 - Practice Max. Score-->
+            <!--Col2 - Block2-->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -78,13 +78,13 @@
 
                 <!--text-->
                 <TextView
+                    android:id="@+id/txtBlock21"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Practice score"
                     android:textSize="@dimen/h2" />
 
                 <TextView
-                    android:id="@+id/txtPracticeMax"
+                    android:id="@+id/txtBlock22"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/padding8"
             android:orientation="horizontal">
-            <!--Col1 Listening Max. Score-->
+            <!--Col1 Block3-->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -111,13 +111,13 @@
 
                 <!--text-->
                 <TextView
+                    android:id="@+id/txtBlock31"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Listening score"
                     android:textSize="@dimen/h2" />
 
                 <TextView
-                    android:id="@+id/txtListeningMax"
+                    android:id="@+id/txtBlock32"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -125,7 +125,7 @@
                     android:textSize="@dimen/h1" />
 
             </LinearLayout>
-            <!--Col2 Language  Max. Score-->
+            <!--Col2 Block4-->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -137,13 +137,71 @@
 
                 <!--text-->
                 <TextView
+                    android:id="@+id/txtBlock41"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Language score"
                     android:textSize="@dimen/h2" />
 
                 <TextView
-                    android:id="@+id/txtLanguageMax"
+                    android:id="@+id/txtBlock42"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0.0%"
+                    android:textSize="@dimen/h1" />
+
+            </LinearLayout>
+        </LinearLayout>
+        <!--Roll3-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding8"
+            android:orientation="horizontal">
+            <!--Col1 Block5-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_clear4"
+                android:orientation="vertical"
+                android:padding="@dimen/padding4">
+
+                <!--text-->
+                <TextView
+                    android:id="@+id/txtBlock51"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/h2" />
+
+                <TextView
+                    android:id="@+id/txtBlock52"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="0.0%"
+                    android:textSize="@dimen/h1" />
+
+            </LinearLayout>
+            <!--Col2 Block6-->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding8"
+                android:layout_weight="1"
+                android:background="@drawable/bg_clear4"
+                android:orientation="vertical"
+                android:padding="@dimen/padding4">
+
+                <!--text-->
+                <TextView
+                    android:id="@+id/txtBlock61"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/h2" />
+
+                <TextView
+                    android:id="@+id/txtBlock62"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
