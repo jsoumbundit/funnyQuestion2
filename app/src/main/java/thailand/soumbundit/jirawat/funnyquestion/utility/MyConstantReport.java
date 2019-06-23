@@ -2,9 +2,17 @@ package thailand.soumbundit.jirawat.funnyquestion.utility;
 
 public class MyConstantReport {
 
-    private  int positionSelect =0;
 
     private String[] reportChoiceSpinner = new String[]{
+            "...",
+            "Unit1 Computer Users", //0
+            "Unit2 Computer Architecture",
+            "Unit3 Computer Applications",
+            "Unit4 The Internet",
+            "Unit5 Communication Systems"
+    };
+
+    private String[] reportUnitChoice = new String[]{
             "...",
             "Unit1",
             "Unit2",
@@ -14,15 +22,15 @@ public class MyConstantReport {
     };
 
 
+
+
     private String[] reportChoiceSpinner2 = new String[]{
             "...",
             "Pre-test Unit",
             "Post-test Unit"
     };
 
-
-
-    private String[] reportPreTest = new String[]{
+    private String[] reportPreTestChoice = new String[]{
             "...",
             "PreUnit",
             "PostUnit"
@@ -30,6 +38,11 @@ public class MyConstantReport {
 
 
     //    Getter
+
+    public String[] getReportUnitChoice() {
+        return reportUnitChoice;
+    }
+
     public String[] getReportChoiceSpinner() {
         return reportChoiceSpinner;
     }
@@ -38,8 +51,8 @@ public class MyConstantReport {
         return reportChoiceSpinner2;
     }
 
-    public String[] getReportPreTest() {
-        return reportPreTest;
+    public String[] getReportPreTestChoice() {
+        return reportPreTestChoice;
     }
 
 

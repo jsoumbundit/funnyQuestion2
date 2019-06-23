@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +30,6 @@ import java.util.Collections;
 import thailand.soumbundit.jirawat.funnyquestion.R;
 import thailand.soumbundit.jirawat.funnyquestion.utility.MyConstantReport;
 import thailand.soumbundit.jirawat.funnyquestion.utility.ScoreTestModel;
-import thailand.soumbundit.jirawat.funnyquestion.utility.ShowScoreAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -117,7 +115,7 @@ public class PreUnitReportFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        final String[] stringsUnit = myConstantReport.getReportPreTest();
+        final String[] stringsUnit = myConstantReport.getReportPreTestChoice();
 
 //        Process Read FireBase
         final ArrayList<String> languageStringArrayList = new ArrayList<>();

@@ -61,8 +61,8 @@ public class Unit2ReportFragment extends Fragment {
         itemSpinner();
 
 //        Show Name User
-        showName();
-        createRecycleView();
+        //showName();
+        //createRecycleView();
         tableSlideUpDown();
 
     }
@@ -127,7 +127,7 @@ public class Unit2ReportFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        final String[] stringsUnit = myConstantReport.getReportChoiceSpinner();
+        final String[] stringsUnit = myConstantReport.getReportUnitChoice();
 
 //        Process Read FireBase
         final ArrayList<String> languageStringArrayList = new ArrayList<>();

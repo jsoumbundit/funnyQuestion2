@@ -556,6 +556,24 @@
                 android:layout_height="wrap_content"
                 android:text="\n"/>
 
+            <!--Score report header-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding8"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/padding4"
+                    android:text="\tScore Report"
+                    android:textSize="@dimen/h3"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
             <!--Unit1-5 Report-->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -582,7 +600,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/imgPreUnitReport"
