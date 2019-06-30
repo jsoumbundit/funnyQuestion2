@@ -2239,8 +2239,7 @@
         android:scaleType="fitXY"
         android:src="@drawable/icon_line"
         app:backgroundTint="@android:color/transparent"
-        app:borderWidth="0dp"
-        android:visibility="gone"/>
+        app:borderWidth="0dp" />
 
 
 </RelativeLayout>

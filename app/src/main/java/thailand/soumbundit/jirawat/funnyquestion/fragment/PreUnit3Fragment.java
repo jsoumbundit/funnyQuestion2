@@ -110,7 +110,7 @@ public class PreUnit3Fragment extends Fragment {
     private void sentValueToFirebase() {
 
         String [] strings = timeTestString.split(" ");
-        String dateString = "PreUnit1_" + strings[0] + "_" + strings[1].trim();
+        String dateString = "PreUnit3_" + strings[0] + "_" + strings[1].trim();
         Log.d("16JunV1", "dateString ==>" + dateString);
 
 //      Create Childs on Firebase
