@@ -269,7 +269,7 @@ public class PostUnit1to5Fragment extends Fragment {
         builder.setIcon(R.drawable.ic_action_alert);
         builder.setTitle("Post-test Unit1-5 Score");
 
-        strings[0] = "You got: " + postTestScoreString + "% of Score";
+        strings[0] = "You got: " + practiceString + "% of Score";
         builder.setItems(strings, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
